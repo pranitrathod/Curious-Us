@@ -1,0 +1,105 @@
+
+<html> 
+
+  <head>
+
+ 
+    <title></title>
+ 
+<script type="text/javascript">
+
+ var teacherLists = new Array(4)
+
+teacherLists["empty"] = ["Select year"];
+
+teacherLists["First Year"] = ["Mr.Rao", "Mr.Sharma", "Mr.Pathak", "Mrs.Rathi","Mr.Ravi Majithia"];
+
+teacherLists["Second Year"] = ["Mr.Deshmukh", "Mr.Patil", "Mr.Mhaske", "Mrs.Jaiswal"];
+
+teacherLists["Third Year"] = ["Mr.Rathod", "Mr.Joshi", "Mr.Kulkarni", "Mrs.More"];
+
+
+function teacherChange(selectObj) 
+{
+  
+  var a = selectObj.selectedIndex;
+  
+var which = selectObj.options[a].value;
+  
+  tList = teacherLists[which];
+  
+ var tSelect = document.getElementById("teacher");
+  
+var len=tSelect.options.length;
+ 
+ while (tSelect.options.length > 0)
+ {
+    tSelect.remove(0);
+  }
+ 
+ var newOption;
+  
+ for (var i=0; i<tList.length; i++) 
+{
+    newOption = document.createElement("option");
+ 
+   newOption.value = tList[i];     
+newOption.text=tList[i];
+    
+   try 
+
+{
+
+tSelect.add(newOption);  
+}
+    catch (e)
+ {
+      tSelect.appendChild(newOption);
+
+
+    
+}
+
+  
+}
+
+}
+ 
+
+
+</script>
+
+</head>
+
+<body>
+
+
+<body background="SAVE_20191225_163457.jpg"
+<p><h1 align="center" font size="10"></h1></p>
+
+ <h1 align="center"><p><label for="year">Select year</label></p></h1>
+<h1 align="center"><p><select id="year" onchange="teacherChange(this);">
+</h1>
+<option value="empty">Select a year</option>
+
+<option value="First Year">First Year</option>
+
+<option value="Second Year">Second Year</option>
+
+<option value="Third Year">Third Year</option>
+
+</p></select>
+
+<br />
+
+<h1 align="center"><p> <label for="teacher">Names of teacher</label>
+</p></h1>
+<h1 align="center"><p><select id="teacher">
+</h1>
+<option value="0">Select teacher</option>
+
+</p></select>
+
+</body>
+
+</html>

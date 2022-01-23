@@ -1,0 +1,72 @@
+Important Namespaces Used
+--------------------------
+
+using System.IO;
+using System.Net;
+using System.Collections.Specialized;
+using System.Data;
+using System.Data.SqlClient;
+
+--------------------------
+
+Retrieve Data Button Click Event Coding
+----------------------------------------
+
+ GridView1.Visible = true;
+
+----------------------------------------
+
+Send Button Click Event Coding
+----------------------------------------
+
+string sname;
+        string mobileno;
+        String mycon = "Data Source=HP-PC\\SQLEXPRESS; Initial Catalog=RegisteredStudents; Integrated Security=True";
+        String myquery = "Select * from studentdata";
+        SqlConnection con = new SqlConnection(mycon);
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandText = myquery;
+        cmd.Connection = con;
+       SqlDataAdapter da = new SqlDataAdapter();
+       da.SelectCommand = cmd;
+        DataSet ds = new DataSet();
+        da.Fill(ds);
+        int nrow;
+        nrow = ds.Tables[0].Rows.Count;
+        int i = 0;
+        while (i < nrow)
+        {
+            sname = ds.Tables[0].Rows[i]["sname"].ToString();
+            mobileno = ds.Tables[0].Rows[i]["mobileno"].ToString();
+            sendsms(mobileno, sname);
+            ListBox1.Items.Add(mobileno + " " + sname);
+
+            i = i + 1;
+        }
+        Label3.Text = "SMS Sent Successfully to All Students";
+        con.Close();
+        GridView1.Visible = false;
+        ListBox1.Visible = true;
+
+------------------------------------------
+
+private void sendsms(string mnumber, string sname)
+    {
+        string destinationaddr =mnumber;
+        string message = TextBox1.Text;
+        string result;
+        String message1 = HttpUtility.UrlEncode(message);
+        using (var wb = new WebClient())
+        {
+            byte[] response = wb.UploadValues("https://api.textlocal.in/send/", new NameValueCollection()
+                {
+                {"apikey" , "USE YOUR API KEY HERE"},
+                {"numbers" , destinationaddr},
+                {"message" , message1},
+                {"sender" , "TXTLCL"}
+                });
+            result = System.Text.Encoding.UTF8.GetString(response);
+
+
+
+        }

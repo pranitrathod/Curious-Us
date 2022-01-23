@@ -1,0 +1,10 @@
+D:\Asp.net_Practice\SignUPage\SignUPage\bin\SignUPage.dll
+D:\Asp.net_Practice\SignUPage\SignUPage\bin\SignUPage.pdb
+D:\Asp.net_Practice\SignUPage\SignUPage\obj\Debug\SignUPage.dll
+D:\Asp.net_Practice\SignUPage\SignUPage\obj\Debug\SignUPage.pdb
+D:\Asp.net_Practice\SignUPage\SignUPage\obj\Debug\SignUPage.csprojResolveAssemblyReference.cache
+D:\Asp.net Project\CuriousUs\SignUPage\bin\SignUPage.dll
+D:\Asp.net Project\CuriousUs\SignUPage\bin\SignUPage.pdb
+D:\Asp.net Project\CuriousUs\SignUPage\obj\Debug\SignUPage.csprojResolveAssemblyReference.cache
+D:\Asp.net Project\CuriousUs\SignUPage\obj\Debug\SignUPage.dll
+D:\Asp.net Project\CuriousUs\SignUPage\obj\Debug\SignUPage.pdb
