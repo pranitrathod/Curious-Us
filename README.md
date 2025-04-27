@@ -1,10 +1,10 @@
-<h1>
+<h4>
   Curious-Us: A lightweight ASP .NET/C# web app for Ravi’s Programming Academy that centralizes course and PDF management and automates SMS notifications—boosting admin efficiency by ~60%.
 
 Tech: ASP .NET MVC, C#, JavaScript, SQL Server, third-party SMS API
 
 Core Features: secure upload/download of syllabi, dynamic course selection, “forgot password” and festival SMS alerts, plus server-side data validation.
-</h1>
+</h4>
 
 
 <center><h2>**Sponsored Letter**</h2></center>
